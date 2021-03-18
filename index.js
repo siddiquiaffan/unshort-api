@@ -2,6 +2,7 @@ const axios = require("axios");
 const validUrl = require("valid-url");
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 5000;
 
 app.get("/api/",(req,res)=>{
   const url = req.query.url;
@@ -40,4 +41,4 @@ app.get("/api/",(req,res)=>{
   }
 });
 
-app.listen(5000 , () => console.log('Listening to the port 5000'));
+app.listen(port , () => console.log('Listening to the port ' + port));
